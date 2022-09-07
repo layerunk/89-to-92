@@ -19,7 +19,7 @@ document.getElementById("player_answer").innerHTML = player2_name + "'s turn to 
 function send() {
     fno = document.getElementById("fno").value;
     sno = document.getElementById("sno").value;
-    product = fno * sno;
+    product = parseInt(fno) * parseInt(sno);
 
     question = fno + " * " + sno;
     qmath = "<h4 id = 'displayword'>" + question + "</h4>";
@@ -28,6 +28,8 @@ function send() {
     row = qmath + inputbox + checkbutton;
 
     document.getElementById("output").innerHTML = row;
+    document.getElementById("fno").innerHTML = "";
+    document.getElementById("sno").innerHTML = "";
 }
 
 qturn = "player1";
@@ -58,6 +60,6 @@ function check() {
         document.getElementById("player_answer").innerHTML = player1_name + "'s turn to answer";
     }
 
-    localStorage.storage("player2_score").value;
+    localStorage.setItem("player2_score" , player2_score).value;
     document.getElementById("output").innerHTML = "";
 }
