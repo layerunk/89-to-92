@@ -2,12 +2,13 @@
 player1_name = localStorage.getItem("player1_name");
 player2_name = localStorage.getItem("player2_name");
 
-
+console.log(player1_name);
+console.log(player2_name);
 player1_score = 0;
 player2_score = 0;
 
-document.getElementById("player1_name").innerHTML = player1_name + ":";
-document.getElementById("player2_name").innerHTML = player2_name + ":";
+document.getElementById("player1").innerHTML = player1_name;
+document.getElementById("player2").innerHTML = player2_name;
 
 document.getElementById("player1_score").innerHTML = player1_score;
 document.getElementById("player2_score").innerHTML = player2_score;
@@ -20,11 +21,17 @@ function send() {
     sno = document.getElementById("sno").value;
     product = fno * sno;
 
-    document.getElementById("output").innerHTML = fno + " * " + sno;
+    question = fno + " * " + sno;
+    qmath = "<h4 id = 'displayword'>" + question + "</h4>";
+    inputbox = "<br> <input type = 'number' id = 'ans' class = 'form-control' placeholder = 'answer'>";
+    checkbutton = "<br> <br> <button class = 'btn btn-info' onclick = 'check()'> Check </button>";
+    row = qmath + inputbox + checkbutton;
+
+    document.getElementById("output").innerHTML = row;
 }
 
-qturn = "player1"
-aturn = "player2"
+qturn = "player1";
+aturn = "player2";
 
 function check() {
 
@@ -50,4 +57,7 @@ function check() {
         document.getElementById("player_question").innerHTML = player2_name + "'s turn to question";
         document.getElementById("player_answer").innerHTML = player1_name + "'s turn to answer";
     }
+
+    localStorage.storage("player2_score").value;
+    document.getElementById("output").innerHTML = "";
 }
