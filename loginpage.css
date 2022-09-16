@@ -1,4 +1,4 @@
-.body
+body
 {
 	background: lightgreen;
 }
@@ -11,17 +11,17 @@
     border-radius: 15px;
 }
 
-#player1_name , #player2_name
+.dis
 {
 	display: inline-block;
 	margin-left: 20px;
 }
 
-#product
+#ans  
 {
 	width: 60%;
 }
-#word_display
+#number
 {
 	letter-spacing: 5px;
 }
